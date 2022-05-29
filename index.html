@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News📰 Detection System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+<style>
+	#ii {
+		background-image: url("https://i2.wp.com/www.scconline.com/blog/wp-content/uploads/2018/04/videoblocks-fake-news-disinformation-concept-internet-social-network-misinformation-4k-uhd-video-loop-animation_hjhg6hh2z_thumbnail-full1512.png?resize=886%2C590&ssl=1");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.aa {
+		background-position: center;
+		background-repeat: repeat;
+		height: 200px;
+		width: 170px;
+		position: relative;
+	}
+
+	#a {
+		border-color: red
+	}
+
+	#a:hover {
+		border-color: white;
+		color: white;
+		box-shadow: 2px 2px 2px 2px rgb(255, 255, 255), 0 10px 10px 0 rgb(0, 253, 230);
+
+	}
+
+	.cc {
+		background-image: linear-gradient(#ffd200, #87db70);
+	}
+
+	.cc:hover {
+		background-image: linear-gradient(lawngreen, darkgreen);
+		color: white;
+	}
+
+	.glow {
+		font-size: 60px;
+		color: #fff;
+		text-align: center;
+		-webkit-animation: glow 1s ease-in-out infinite alternate;
+		-moz-animation: glow 1s ease-in-out infinite alternate;
+		animation: glow 1s ease-in-out infinite alternate;
+	}
+
+	@-webkit-keyframes glow {
+		from {
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e6c3, 0 0 40px #0800e6, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+		}
+		to {
+			text-shadow: 0 0 20px #fff, 0 0 30px #d34dff, 0 0 40px #4dff7f, 0 0 50px #f94dff, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+		}
+	}
+</style>
+
+</head>
+<body id="ii">
+	<div id="kk" class="container">
+			<div class="row">
+				<div class="col-md-4">
+		
+				</div>
+				<div class="col-md-4 text-center">
+					<img class="aa" src="https://www.krishnacollege.ac.in/icotrime/images/slider/logo.png">
+				</div>
+				
+			</div>
+				<div class="text-center text-white text-bold">
+					<h2 class="glow" style="font-family: fcicons"> FAKE NEWS DETECTOR</h2>
+				</div>
+			
+				<div class="text-center text-white ">
+					<h4> An NLP and Machine Learning based web application for Fake News Prediction</h4>
+				</div>
+		<br>
+
+		
+		<div >
+			<!-- <h1>Fake News📰 Detector</h1> -->
+
+			
+			<div id="a" class="card">
+				<div class="table-responsive">
+					<div class="container">
+						<div class="mb-3">
+								<form action="{{ url_for('predict')}}" method="POST" class="login">
+									<textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
+									<br> </br>
+									<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+									<div class="results">
+
+										{% if prediction == ['FAKE']%}
+										<h2 style="color:red;">Spam⚠️News📰 </h2>
+										{% elif prediction == ['REAL']%}
+													<h2 style="color:green;"><b>Looking Real News📰</b></h2>
+										{% endif %}
+
+									</div>
+
+								</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>
+	
+  
+	
+  
+  
+  
